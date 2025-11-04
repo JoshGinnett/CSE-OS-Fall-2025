@@ -2,7 +2,7 @@
 #include "rr.h"
 
 static int counter = 0; //Used to keep track of whose turn it is
-const int timeQuantum = 1;
+const int timeQuantum = 1; //A constant value so I can set th time quantum for reset
 
 int tq = timeQuantum; //Keeps track of the remaining time quantum for current process
 
