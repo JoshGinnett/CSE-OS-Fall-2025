@@ -1,7 +1,7 @@
 #include "process.h"
 #include "fifo.h"
 
-void fifo(struct process **FIFOQueue, int queueSize, int* queueptr, int globalTime){
+void fifo(struct process **FIFOQueue, int* queueptr, int globalTime){
 
     //rearrange for this algorithm
     

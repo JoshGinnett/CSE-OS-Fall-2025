@@ -81,14 +81,16 @@ void scheduleMain(struct process **procArray, int procArraySize, int maxTimestep
         }
 
         //execute processes based on the highest non-empty queue
+
+        //check to make sure parameters make sense for each function
         if(emptyQueues[0] == 0) { //if this queue is not empty..
-            rr(RRQueue, procArraySize, RRQueueidx, t);
+            rr(RRQueue, RRQueueidx, t);
         } else if(emptyQueues[1] == 0) {
-            srtrf(STCFQueue, procArraySize, STCFQueueidx, t);
+            srtrf(STCFQueue, STCFQueueidx, t);
         } else if(emptyQueues[2] == 0) {
-            fifo(FIFOQueue, procArraySize, FIFOQueueidx, t);
+            fifo(FIFOQueue, FIFOQueueidx, t);
         } else if(emptyQueues[3] == 0) {
-            sjf(SJFQueue, procArraySize, SJFQueueidx, t);
+            sjf(SJFQueue, SJFQueueidx, t);
         }
 
         t++; //increment time (based on type of algorithm)
