@@ -56,22 +56,22 @@ int scheduleMain(struct process **procArray, int procArraySize, int maxTimesteps
                 if (procArray[i]->priority == 1) {
                     //round robin
                     RRQueue[*RRQueueidx] = procArray[i]; //add pointer to queue
-                    RRQueueidx++; //increment queue tracker
+                    (*RRQueueidx)++; //increment queue tracker
                     emptyQueues[0] = 0; //not empty anymore
                 } else if (procArray[i]->priority == 2) {
                     //shortest time to completion first
                     STCFQueue[*STCFQueueidx] = procArray[i];
-                    STCFQueueidx++;
+                    (*STCFQueueidx)++;
                     emptyQueues[1] = 0;
                 } else if (procArray[i]->priority == 3) {
                     //first in first out
                     FIFOQueue[*FIFOQueueidx] = procArray[i];
-                    FIFOQueueidx++;
+                    (*FIFOQueueidx)++;
                     emptyQueues[2] = 0;
                 } else if (procArray[i]->priority == 4) {
                     //shortest job first
                     SJFQueue[*SJFQueueidx] = procArray[i];
-                    SJFQueueidx++;
+                    (*SJFQueueidx)++;
                     emptyQueues[3] = 0;
                 } else {
                     printf("Invalid process priority level!\n");
